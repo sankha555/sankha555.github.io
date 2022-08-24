@@ -1,3 +1,26 @@
+@media screen and (max-width:600px){
+    .black-bar-right{
+        display: none;
+    }
+
+    .stander-right{
+        display: none;
+    }
+
+    .black-bar{
+        display: none;
+    }
+
+    .image{
+        display: none;
+    }
+
+    .other {
+        width: 100vw;
+        padding: 20px;
+    }
+}
+
 html {
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);
@@ -7,6 +30,7 @@ html {
 
 body{
     background-color: black;
+    width: 100vw;
 }
 
 a{
@@ -253,6 +277,8 @@ section {
     background-color: yellow;
     color: black;
     display: inline;
+    background-attachment: fixed;
+    position: fixed;
     margin-right: 10px;
     text-align: center;
     padding: 1px;
@@ -260,8 +286,8 @@ section {
     font-weight: 900;
     font-size: x-large;
     font-family: 'Montserrat', sans-serif;
-    margin-left: -6px;
-    z-index: 100;
+    margin-left: 10px;
+    z-index: 200;
     margin-top: 20px;
 }
 
@@ -453,27 +479,6 @@ section {
   }
 }
 
-@media only screen and (max-width:400px){
-    .black-bar-right{
-        display: none;
-    }
-
-    .stander-right{
-        display: none;
-    }
-
-    .black-bar{
-        display: none;
-    }
-
-    .logo{
-        display: none;
-    }
-
-    .image{
-        display: none;
-    }
-}
 
 .other{
     animation: fadeIn ease 1s;
@@ -529,4 +534,18 @@ section {
 
 .contact-link{
     color: white;
+}
+
+.navbar-toggler-icon{
+    color: white !important;
+}
+
+.headers {
+    background-attachment: fixed;
+    position: fixed;
+    height: 80px;
+}
+
+.main-container{
+    width: 100%;
 }
