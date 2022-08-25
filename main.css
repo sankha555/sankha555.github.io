@@ -49,8 +49,13 @@
 }
 
 @media screen and (max-width:600px){
-    .spinner {
-        margin-left: 10vw;
+    #loader {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body {
+        width: 100vw;
     }
 
     .black-bar-right{
@@ -66,7 +71,7 @@
     }
 
     .image{
-        margin-left: 50px !important;
+        margin-left: 400px !important;
         margin-right: auto !important;
     }
 
@@ -92,6 +97,10 @@
     .skillBox {
         width: 80vw;
     }
+
+    #toggler:focus{
+        outline: none;
+    }
 }
 
 html {
@@ -104,6 +113,7 @@ html {
 body{
     background-color: black;
     width: 100vw;
+    overflow-x: hidden;
 }
 
 a{
@@ -613,6 +623,11 @@ section {
     color: white !important;
     margin-top: 20px;
     margin-left: 60px;
+}
+
+.navbar-toggler-icon:active{
+    outline: none;
+    text-decoration: none;
 }
 
 .headers {
