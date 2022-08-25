@@ -49,6 +49,10 @@
 }
 
 @media screen and (max-width:600px){
+    body{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    }
+
     #loader {
         margin-left: auto;
         margin-right: auto;
@@ -73,6 +77,10 @@
     .image{
         margin-left: 400px !important;
         margin-right: auto !important;
+    }
+
+    .headline {
+        font-size: small;
     }
 
     .other {
@@ -114,6 +122,11 @@ body{
     background-color: black;
     width: 100vw;
     overflow-x: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+.headline {
+    font-size: x-large;
 }
 
 a{
