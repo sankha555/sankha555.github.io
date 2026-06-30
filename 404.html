@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // 1. Get the requested shortcut (e.g., "twitter" from "/twitter")
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    
+    // If you are using a GitHub project page (e.g., username.github.io/repo-name), 
+    // the first segment is the repo name. We want the last segment.
+    const slug = pathSegments[pathSegments.length - 1];
+
+    // 2. Fetch your redirects JSON file
+    // Using a relative path so it works for both user and project pages
+    fetch('/redirects.json') 
+      .then(response => {
+        if (!response.ok) throw new Error('Could not load redirects configuration.');
+        return response.json();
+      })
+      .then(redirects => {
+        // 3. Check if the slug exists in your JSON
+        if (redirects && redirects[slug]) {
+          // Redirect the browser instantly
+          window.location.replace(redirects[slug]);
+        } else {
+          // Fallback if the shortcut doesn't exist
+          show404Message();
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        show404Message();
+      });
+
+    function show404Message() {
+      document.getElementById('status').innerHTML = `
+        <h1>404 - Link Not Found</h1>
+        <p>Sorry, that short link doesn't exist or has expired.</p>
+        <a href="/">Go back to home</a>
+      `;
+    }
+  </script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; color: #333; }
+    a { color: #0066cc; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div id="status">
+    <p>Redirecting you in a moment...</p>
+  </div>
+</body>
+</html>
