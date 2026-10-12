@@ -113,6 +113,54 @@
     }
 }
 
+/* Tablets and phones: drop the fixed side bars and let content use the full width */
+@media screen and (max-width:767.98px){
+    .black-bar,
+    .black-bar-right,
+    .stander-right {
+        display: none;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    section {
+        margin-right: 0;
+    }
+
+    .navbar-collapse {
+        background-color: black;
+    }
+
+    .nav-item {
+        float: none;
+        width: auto;
+        margin: 10px 0;
+    }
+
+    .navbar-nav {
+        margin-left: 0 !important;
+    }
+
+    .project-header,
+    .project-viewer {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .footer {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .spinner {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 html {
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vh);

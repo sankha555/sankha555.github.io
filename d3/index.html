@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+
+svg {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+}
 
 .node rect {
   cursor: pointer;
@@ -64,6 +72,8 @@ var tree = d3.layout.tree()
 //Using body as the container to the svg element on which D3 data is to visualised
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
+    .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " 500")
+    .attr("preserveAspectRatio", "xMinYMin meet")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -94,7 +104,8 @@ function update(source) {
 
   d3.select("svg").transition()
       .duration(duration)
-      .attr("height", height);
+      .attr("height", height)
+      .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + height);
 
   d3.select(self.frameElement).transition()
       .duration(duration)

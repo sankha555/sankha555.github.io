@@ -1,0 +1,63 @@
+/* Responsive tweaks shared by index, experience, courses and awards pages */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+.profile-img {
+    width: 80%;
+    max-width: 320px;
+    height: auto;
+}
+
+/* Long links (e.g. the email address) must wrap instead of overflowing */
+.menulink,
+.about a {
+    overflow-wrap: anywhere;
+}
+
+/* Keep the sidebar beside the content on wider screens, but inside its column
+   and scrollable if it is taller than the viewport */
+@media (min-width: 768px) {
+    .allstuff .fixed-posi {
+        position: sticky;
+        top: 1rem;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+}
+
+/* Phones: stacked layout */
+@media (max-width: 767.98px) {
+    .allstuff .name {
+        font-size: 1.6rem;
+    }
+
+    .allstuff .header-1 {
+        font-size: 1.4rem;
+    }
+
+    .allstuff .menulink {
+        font-size: 1rem;
+    }
+
+    .allstuff .about.text-justify {
+        text-align: left !important;
+    }
+
+    .allstuff .about ul {
+        padding-left: 1.25rem;
+    }
+
+    .profile-img {
+        width: 60%;
+    }
+}
