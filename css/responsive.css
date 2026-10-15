@@ -26,7 +26,7 @@ img {
 
 .profile-img {
     object-fit: cover;
-    object-position: center 25%;
+    object-position: center 10%;  /* fallback; js/profile-crop.js refines it */
 }
 
 /* Tablets and desktops: the sidebar stays fixed in place and always fits the
