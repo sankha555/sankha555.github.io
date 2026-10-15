@@ -24,17 +24,6 @@ img {
     overflow-wrap: anywhere;
 }
 
-/* Keep the sidebar beside the content on wider screens, but inside its column
-   and scrollable if it is taller than the viewport */
-@media (min-width: 768px) {
-    .allstuff .fixed-posi {
-        position: sticky;
-        top: 1rem;
-        max-height: calc(100vh - 2rem);
-        overflow-y: auto;
-    }
-}
-
 /* Phones: stacked layout */
 @media (max-width: 767.98px) {
     .allstuff .name {
